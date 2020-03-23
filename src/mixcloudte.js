@@ -57,10 +57,10 @@ var jqsrc = '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
             starttime = (trackdata[track].startSeconds) ? trackdata[track].startSeconds : '';
             if (trackdata[track].__typename == "ChapterSection") {
                 tracks += '<div class="tracklist-table-row"><div class="tracklist-table-row-number">' + trackno + '</div><div class="tracklist-table-row-song"><span title="' + trackdata[track].chapter + '">' + trackdata[track].chapter + '</span></div><div class="tracklist-table-row-artist"></div><div class="tracklist-table-row-buy"><span class="starttime">' + fmtMSS(starttime) + '</span></div></div>';
-				tracktext = tracktext + fmtMSS(starttime) + "  " + trackdata[track].chapter + "\n";
+				tracktext = tracktext + fmtMSS(starttime) + "  " + trackno + "\n";
             } else {
                 tracks += '<div class="tracklist-table-row"><div class="tracklist-table-row-number">' + trackno + '</div><div class="tracklist-table-row-song"><span title="' + trackdata[track].songName + '">' + trackdata[track].songName + '</span></div> <div class="tracklist-table-row-artist"><span>' + trackdata[track].artistName + '</span></div><div class="tracklist-table-row-buy"><span class="starttime">' + fmtMSS(starttime) + '</span></div></div>';
-				tracktext = tracktext + fmtMSS(starttime) + "  " + trackdata[track].chapter + ". " + trackdata[track].artistName + " - " + trackdata[track].songName + "\n";
+				tracktext = tracktext + fmtMSS(starttime) + "  " + trackno + ". " + trackdata[track].artistName + " - " + trackdata[track].songName + "\n";
             }
 
             trackno++;
