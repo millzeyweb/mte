@@ -51,6 +51,7 @@ var jqsrc = '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
         timeindexes = '';
         trackno = 1;
         showhidebutton = '';
+		tracktext = "";
 
         for (var track in trackdata) {
             starttime = (trackdata[track].startSeconds) ? trackdata[track].startSeconds : '';
@@ -62,7 +63,12 @@ var jqsrc = '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
 
             trackno++;
             timeindexes += (trackdata[track].start_time) ? trackdata[track].start_time + ', ' : '';
+			
+			    tracktext = tracktext + fmtMSS(starttime) + "  " + trackdata[track].chapter + ". " + trackdata[track].artistName + " - " + trackdata[track].songName + "\n";
         }
+		
+		alert(tracktext);
+		
         return tracks;
     },
     insertMTEButton = function (trackhtml) {
